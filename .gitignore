@@ -1,6 +1,10 @@
 .vscode
 .DS_Store
 
-node_modules
-package-lock.json
-package.json
+cache
+out
+proofs
+broadcast
+.env
+plonk_vk.sol
+circuits/target/*
