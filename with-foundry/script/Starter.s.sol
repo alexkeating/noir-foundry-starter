@@ -5,16 +5,16 @@ import "circuits/contract/with_foundry/plonk_vk.sol";
 import "contract/Starter.sol";
 
 contract StarterScript is Script {
-    Starter public starter;
-    UltraVerifier public verifier;
+  Starter public starter;
+  UltraVerifier public verifier;
 
-    function setUp() public {}
+  function setUp() public {}
 
-    function run() public {
-        uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
-        vm.startBroadcast(deployerPrivateKey);
+  function run() public {
+    uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
+    vm.startBroadcast(deployerPrivateKey);
 
-        verifier = new UltraVerifier();
-        starter = new Starter(verifier);
-    }
+    verifier = new UltraVerifier();
+    starter = new Starter(verifier);
+  }
 }
