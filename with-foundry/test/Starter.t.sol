@@ -1,8 +1,8 @@
 pragma solidity ^0.8.17;
 
 import "forge-std/Test.sol";
-import "../contract/Starter.sol";
-import "../circuits/contract/with_foundry/plonk_vk.sol";
+import "contract/Starter.sol";
+import "circuits/contract/with_foundry/plonk_vk.sol";
 
 contract StarterTest is Test {
     Starter public starter;
@@ -20,7 +20,7 @@ contract StarterTest is Test {
         wrong[0] = bytes32(0x0000000000000000000000000000000000000000000000000000000000000004);
     }
 
-    function testVerifyProof() public {
+    function testVerifyProof() public view {
         string memory proof = vm.readLine("./circuits/proofs/with_foundry.proof");
         bytes memory proofBytes = vm.parseBytes(proof);
         starter.verifyEqual(proofBytes, correct);
